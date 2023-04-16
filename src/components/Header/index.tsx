@@ -1,4 +1,4 @@
-import { Effect01, Effect02, HeaderContainer, ImgBox } from "./styleds"
+import { Effect01, Effect02, HeaderContainer, ImgBox } from "./styles"
 
 import Logo from '../../assets/Logo.png';
 import effect02 from '../../assets/effect01.png';

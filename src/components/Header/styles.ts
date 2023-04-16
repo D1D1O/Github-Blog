@@ -7,6 +7,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  background-color: ${props => props.theme["base-post"]} ;
 
 `;
 
