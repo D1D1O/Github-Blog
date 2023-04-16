@@ -1,7 +1,8 @@
 import { Header } from "../../components/Header"
 import { MainCard } from "../../components/MainCard"
+import { PostCard } from "../../components/PostCard"
 import { SearchForm } from "../../components/SearchForm"
-import { HomeContainer } from "./styles"
+import { HomeContainer, PostsContainer, PostsItems } from "./styles"
 
 
 export const Home = () => {
@@ -11,6 +12,19 @@ export const Home = () => {
       <MainCard/>
       <SearchForm/>
 
+
+    <PostsContainer>
+      <PostsItems>
+        <PostCard/>
+        <PostCard/>
+        <PostCard/>
+        <PostCard/>
+        <PostCard/>
+        <PostCard/>
+        <PostCard/>
+        <PostCard/>
+      </PostsItems>
+    </PostsContainer>
 
 
     </HomeContainer>
