@@ -1,18 +1,20 @@
-import { ContentCard, HeaderCard, MainContainer } from "./styled"
+import { ContentCard, HeaderCard, MainContainer, MainContent } from "./styled"
 
 export const PostCard = () => {
   return (
     <MainContainer>
-      <HeaderCard>
-        <h1>JavaScript data types and data structures</h1>
-        <span>Há 1 dia</span>
-      </HeaderCard>
+      <MainContent>
+        <HeaderCard>
+          <h1>JavaScript data types and data structures</h1>
+          <span>Há 1 dia</span>
+        </HeaderCard>
 
-      <ContentCard>
-        <p>
-        Programming languages all have built-in data structures, bu These.....   
-       </p>
-      </ContentCard>
+        <ContentCard>
+          <p>
+          ProgrammingProgramming languages all have built-in data structures, bu These Programming languages all have built-in data structures, bu TheseProgramming languages all have built-in data structures, bu TheseProgramming languages all have built-in data structures, bu TheseProgramming languages all have built-in data structures, bu TheseProgramming languages all have built-in data structures, bu These languages all have built-in data structures, bu These   
+        </p>
+        </ContentCard>
+      </MainContent>
 
 
     </MainContainer>

@@ -39,12 +39,27 @@ export const HeaderContent = styled.div`
 
 export const MainContent = styled.div`
   display:  flex;
+  width: 38.25rem;
+  height: 3.25rem;
   flex-direction: row;
   margin-top: 0.625rem;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: ${ props => props.theme["base-text"]} ;
+
 `;
 
 export const FooterContent = styled.div`
   display:  flex;
   flex-direction: row;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
+  gap: 24px;
+  span:hover {
+    color: red;
+  }
+
+
 `;

@@ -1,6 +1,7 @@
 import { DivContainer, DivContent, FooterContent, HeaderContent, ImgContainer, MainCardContainer, MainContent, MainDiv } from "./styles";
 
 import didio from '../../assets/didio.jpg'
+import github from '../../assets/github.png'
 
 export const MainCard = () => {
   return (
@@ -13,7 +14,7 @@ export const MainCard = () => {
         <DivContainer>
           <DivContent>
             <HeaderContent>
-              <h2>Cameron Williamson</h2>  <span>github</span>
+              <h2>Cameron Williamson</h2>  <span> <img src={github} alt="" /></span>
             </HeaderContent>
             <MainContent>
               <p>
@@ -22,9 +23,7 @@ export const MainCard = () => {
             </MainContent>
 
             <FooterContent>
-              <div>
-                @git @empresa @seguidores
-              </div>
+                <span>@git</span> <span>@empresa</span> <span>@seguidores</span>
             </FooterContent>
 
           </DivContent>

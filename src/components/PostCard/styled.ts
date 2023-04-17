@@ -8,13 +8,53 @@ export const MainContainer = styled.main`
   height: 16.25rem;
   background-color: ${ props => props.theme["base-post"]} ;
   border-radius: 10px;
+`;
+export const MainContent = styled.main`
+  margin:32px
 
 `;
+
+
 export const HeaderCard = styled.main`
-  display  : flex ;
-  flex-direction: row;
+  display  : grid ;
+  grid-template-columns: 6fr 1fr;
+
+  h1 {
+    //background-color: red;
+    width: 283px;
+    height: 64px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 160%;
+    color: ${ props => props.theme["base-title"]};
+  }
+  span {
+    //background-color: blue;
+    width: 54px;
+    height: 22px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    color: ${ props => props.theme["base-span"]} ;
+  }
 
 `;
 export const ContentCard = styled.main`
+  width: 352px;
+  height: 112px;
+  margin-top: 20px;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: ${ props => props.theme["base-text"]};
 
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow:ellipsis;
 `;
