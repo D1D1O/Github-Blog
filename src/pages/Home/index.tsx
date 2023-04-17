@@ -8,25 +8,20 @@ import { HomeContainer, PostsContainer, PostsItems } from "./styles"
 export const Home = () => {
   return (
     <HomeContainer>
-      <Header/>
       <MainCard/>
       <SearchForm/>
-
-
-    <PostsContainer>
-      <PostsItems>
-        <PostCard/>
-        <PostCard/>
-        <PostCard/>
-        <PostCard/>
-        <PostCard/>
-        <PostCard/>
-        <PostCard/>
-        <PostCard/>
-      </PostsItems>
-    </PostsContainer>
-
-
+      <PostsContainer>
+        <PostsItems>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+        </PostsItems>
+      </PostsContainer>
     </HomeContainer>
   )
 }

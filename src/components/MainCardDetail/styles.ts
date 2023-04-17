@@ -6,11 +6,11 @@ export const MainDiv = styled.div`
   justify-content: center;
 `
 export const MainCardContainer = styled.main`
-  display: grid;
-  grid-template-columns: 1fr 3fr; //repeat(2,1fr);
+  display: flex;
+  flex-direction: column;
   width: 54rem;
   height: 13.25rem;
-  background-color: ${ props => props.theme["base-profile"]};
+  background-color: ${props => props.theme["base-profile"]};
   border-radius: 10px;
   margin-top: -8rem;
 `;
@@ -24,6 +24,7 @@ export const ImgContainer = styled.img`
 `;
 
 export const DivContainer = styled.div`
+  margin: 2rem;
 `;
 
 export const DivContent = styled.div`
@@ -39,16 +40,22 @@ export const HeaderContent = styled.div`
 
 export const MainContent = styled.div`
   display:  flex;
-  width: 38.25rem;
+  width: 50rem;
   height: 3.25rem;
   flex-direction: row;
   margin-top: 0.625rem;
+
   font-family: 'Nunito';
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 160%;
-  color: ${ props => props.theme["base-text"]} ;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 130%;
+  color: ${props => props.theme["base-title"]} ;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
 
 `;
 
@@ -66,4 +73,5 @@ export const FooterContent = styled.div`
     line-height: 160%;
     color: ${props => props.theme["base-span"]};
   }
+
 `;
