@@ -1,29 +1,44 @@
 import { DivContainer, DivContent, FooterContent, HeaderContent, ImgContainer, MainCardContainer, MainContent, MainDiv } from "./styles";
 
-import didio from '../../assets/didio.jpg'
+import git from '../../assets/git.png'
+import company from '../../assets/company.png'
+import followers from '../../assets/followers.png'
+
+
 import github from '../../assets/github.png'
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 export const MainCard = () => {
+
+  const {user} = useContext(UserContext);
+
   return (
     <MainDiv>
       <MainCardContainer>
         <DivContainer>
-          <ImgContainer src={didio} alt="" />
+          <ImgContainer src={user.avatar_url} alt="" />
         </DivContainer>
 
         <DivContainer>
           <DivContent>
             <HeaderContent>
-              <h2>Cameron Williamson</h2>  <span> <img src={github} alt="" /></span>
+              <h2> {user.name} </h2>
+                
+                <a rel="stylesheet" href={user.html_url} target="_blank">
+                <span> <img src={github} alt="" /></span>
+                </a> 
             </HeaderContent>
             <MainContent>
               <p>
-              Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.
+                {user.bio}
               </p>
             </MainContent>
 
             <FooterContent>
-                <span>@git</span> <span>@empresa</span> <span>@seguidores</span>
+                <span> <img src={git} /> {user.login} 
+                </span> <span> <img src={company} />  {user.company} 
+                </span> <span> <img src={followers} /> {user.followers} </span>
             </FooterContent>
 
           </DivContent>

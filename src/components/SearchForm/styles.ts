@@ -50,6 +50,7 @@ export const CardHeader = styled.header`
 `
 
 export const InputCard = styled.input`
+  width: 100%;
   height: 50px;
   padding: 15px;
   border: 1px solid ${ props => props.theme["base-border"]} ;
@@ -58,4 +59,8 @@ export const InputCard = styled.input`
   margin-top: 0.75rem;
   color: ${props => props.theme["base-label"]} 
 `
+
+export const  FormCard = styled.form`
+  width: 100%;
+`;
 

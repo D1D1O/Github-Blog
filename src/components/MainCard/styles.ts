@@ -35,6 +35,16 @@ export const HeaderContent = styled.div`
   display:  flex;
   flex-direction: row;
   justify-content: space-between;
+
+  h2 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    color: ${ props => props.theme["base-title"]};
+  }
+
 `;
 
 export const MainContent = styled.div`
@@ -57,8 +67,10 @@ export const FooterContent = styled.div`
   flex-direction: row;
   margin-top: 1.5rem;
   gap: 24px;
-
   span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;

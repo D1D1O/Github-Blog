@@ -6,7 +6,7 @@ export const MainContainer = styled.main`
   flex-direction: column;
   width: 26rem;
   height: 16.25rem;
-  background-color: ${ props => props.theme["base-post"]} ;
+  background-color: ${props => props.theme["base-post"]} ;
   border-radius: 10px;
 `;
 export const MainContent = styled.main`
@@ -28,7 +28,7 @@ export const HeaderCard = styled.main`
     font-weight: 700;
     font-size: 20px;
     line-height: 160%;
-    color: ${ props => props.theme["base-title"]};
+    color: ${props => props.theme["base-title"]};
   }
   span {
     //background-color: blue;
@@ -39,11 +39,11 @@ export const HeaderCard = styled.main`
     font-weight: 400;
     font-size: 14px;
     line-height: 160%;
-    color: ${ props => props.theme["base-span"]} ;
+    color: ${props => props.theme["base-span"]} ;
   }
 
 `;
-export const ContentCard = styled.main`
+export const ContentCard = styled.div`
   width: 352px;
   height: 112px;
   margin-top: 20px;
@@ -52,9 +52,18 @@ export const ContentCard = styled.main`
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
-  color: ${ props => props.theme["base-text"]};
+  color: ${props => props.theme["base-text"]};
 
-  overflow: hidden;
+  /* overflow: hidden;
   word-wrap: break-word;
-  text-overflow:ellipsis;
+  white-space: pre-line;
+  text-overflow:ellipsis; */
+   p{
+    display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+   }
+
+
 `;

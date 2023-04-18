@@ -4,6 +4,7 @@ import { defaultTheme } from "./styles/themes/default"
 import { GlobalStyle } from "./styles/global"
 import { Home } from "./pages/Home"
 import { Router } from "./Router"
+import { UserProvider } from "./contexts/UserContext"
 
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
         <GlobalStyle />
-        <Router />
+        <UserProvider>
+          <Router />
+        </UserProvider>
       </BrowserRouter>
     </ThemeProvider>
   )

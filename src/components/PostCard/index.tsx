@@ -1,18 +1,26 @@
 import { ContentCard, HeaderCard, MainContainer, MainContent } from "./styled"
 
-export const PostCard = () => {
+interface propsType {
+  titulo?: string;
+  body?: string;
+}
+
+export const PostCard = ({ titulo,body }:propsType) => {
+
+  console.log(body);
+
   return (
     <MainContainer>
       <MainContent>
         <HeaderCard>
-          <h1>JavaScript data types and data structures</h1>
+          {/* <h1> { titulo } </h1> */}
           <span>Há 1 dia</span>
         </HeaderCard>
 
         <ContentCard>
           <p>
-          ProgrammingProgramming languages all have built-in data structures, bu These Programming languages all have built-in data structures, bu TheseProgramming languages all have built-in data structures, bu TheseProgramming languages all have built-in data structures, bu TheseProgramming languages all have built-in data structures, bu TheseProgramming languages all have built-in data structures, bu These languages all have built-in data structures, bu These   
-        </p>
+            {/* {body} */}
+          </p>
         </ContentCard>
       </MainContent>
 

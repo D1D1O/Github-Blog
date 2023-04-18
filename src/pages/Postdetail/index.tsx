@@ -3,6 +3,7 @@ import { MainCardDetail } from "../../components/MainCardDetail"
 import { ContentPostDetail, PostDetail, PostDetailMain } from "./styled"
 
 export const Postdetail = () => {
+
   return (
     <PostDetailMain>
       <MainCardDetail/>
