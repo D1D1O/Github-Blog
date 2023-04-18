@@ -7,9 +7,13 @@ import { UserContext } from "../../contexts/UserContext";
 export const Postdetail = () => {
 
   const {post} = useContext(UserContext);
+  
   return (
     <PostDetailMain>
-      <MainCardDetail title={post.title} />
+      <MainCardDetail 
+        title={post.title} 
+        html_url={post.html_url} 
+      />
       <ContentPostDetail>
           <PostDetail>
             <p>

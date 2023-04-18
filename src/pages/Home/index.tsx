@@ -11,8 +11,8 @@ export const Home =  () => {
 
   const { issues,fillPost } = useContext(UserContext);
 
-  const handleSelectCard = useCallback( async (title:string, body:string) => {
-    await fillPost({title,body});
+  const handleSelectCard = useCallback( async (title:string, body:string, html_url:string) => {
+    await fillPost({title,body,html_url});
   },[]);
 
   return (
@@ -25,7 +25,7 @@ export const Home =  () => {
             (
               issues.items && issues.items.map((item) => {
                 return (
-                  <NavLink onClick={()=> handleSelectCard(item.title,item.body)} key={item.id} to={'b'} >
+                  <NavLink onClick={()=> handleSelectCard(item.title,item.body,item.html_url)} key={item.id} to={'detail'} >
                      <LinkPost  style={{ textDecoration: 'none' }}>
                     
                         <PostCard titulo={item.title} body={item.body} />

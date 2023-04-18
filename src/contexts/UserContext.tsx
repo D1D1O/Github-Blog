@@ -15,6 +15,7 @@ interface Item {
   body: string;
   title: string;
   user: User;
+  html_url: string;
 }
 
 interface UserContextData{
@@ -40,6 +41,7 @@ interface User {
 interface fillPostProps {
   title?: string;
   body?: string;
+  html_url?: string;
 }
 
 export const UserContext = React.createContext({} as UserContextData);

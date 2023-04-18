@@ -9,7 +9,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayouts/> } >
          <Route path="/" element={<Home />} />
-         <Route path="/b" element={ <Postdetail />} />
+         <Route path="/detail" element={ <Postdetail />} />
       </Route>
     </Routes>
   );

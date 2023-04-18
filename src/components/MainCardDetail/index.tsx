@@ -12,10 +12,15 @@ import followers from '../../assets/followers.png'
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 
-export const MainCardDetail = ({title}:any) => {
+interface MainCardDetailProps {
+  title?: string;
+  html_url?: string;
+}
+
+export const MainCardDetail = ({title, html_url}:MainCardDetailProps) => {
 
   const {user} = useContext(UserContext);
-  
+
   return (
     <MainDiv>
       <MainCardContainer>
@@ -24,7 +29,11 @@ export const MainCardDetail = ({title}:any) => {
             <NavLink to="/" title="Home">
               <span> <img src={back} alt="" /> </span>
             </NavLink>
-            <span> <img src={github} alt="" />  </span>
+            <span> 
+              <a rel="stylesheet" href={html_url} target="_blank">
+                <img src={github} alt="" />
+              </a>  
+            </span>
           </HeaderContent>
 
           <MainContent>
