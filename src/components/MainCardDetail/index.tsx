@@ -6,7 +6,16 @@ import { DivContainer, DivContent, FooterContent, HeaderContent, ImgContainer, M
 import back from '../../assets/back.png'
 import github from '../../assets/github2.png'
 
-export const MainCardDetail = () => {
+import git from '../../assets/git.png'
+import company from '../../assets/company.png'
+import followers from '../../assets/followers.png'
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
+
+export const MainCardDetail = ({title}:any) => {
+
+  const {user} = useContext(UserContext);
+  
   return (
     <MainDiv>
       <MainCardContainer>
@@ -20,12 +29,16 @@ export const MainCardDetail = () => {
 
           <MainContent>
             <p>
-              Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.
+              {
+                title
+              }
             </p>
           </MainContent>
 
           <FooterContent>
-            <span>@git</span> <span>@empresa</span> <span>@seguidores</span>
+            <span> <img src={git} /> {user.login}
+            </span> <span> <img src={company} />  {user.company}
+            </span> <span> <img src={followers} /> {user.followers} </span>
           </FooterContent>
         </DivContainer>
       </MainCardContainer>

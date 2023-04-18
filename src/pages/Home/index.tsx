@@ -4,23 +4,17 @@ import { MainCard } from "../../components/MainCard"
 import { PostCard } from "../../components/PostCard"
 import { SearchForm } from "../../components/SearchForm"
 import { UserContext } from "../../contexts/UserContext"
-import { HomeContainer, PostsContainer, PostsItems } from "./styles"
-
+import { HomeContainer, LinkPost, PostsContainer, PostsItems } from "./styles"
+import { NavLink  } from "react-router-dom"
 
 export const Home =  () => {
 
-  const { issues,fetchIssues } = useContext(UserContext);
+  const { issues,fillPost } = useContext(UserContext);
 
-  useEffect( () => {
-    const initalload = async () => {
-      await fetchIssues('');
-    }
-     initalload()
+  const handleSelectCard = useCallback( async (title:string, body:string) => {
+    await fillPost({title,body});
   },[]);
 
-
-  console.log('issues');
-  console.log(issues);
   return (
     <HomeContainer>
       <MainCard/>
@@ -28,11 +22,18 @@ export const Home =  () => {
       <PostsContainer>
         <PostsItems>
           {
-              issues.items.map((item) => {
+            (
+              issues.items && issues.items.map((item) => {
                 return (
-                  <PostCard titulo={item.title} body={item.body} />
+                  <NavLink onClick={()=> handleSelectCard(item.title,item.body)} key={item.id} to={'b'} >
+                     <LinkPost  style={{ textDecoration: 'none' }}>
+                    
+                        <PostCard titulo={item.title} body={item.body} />
+                      
+                     </LinkPost>
+                  </NavLink>
                 )
-              })
+              }))
           }
 
         </PostsItems>

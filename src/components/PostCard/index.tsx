@@ -7,8 +7,6 @@ interface propsType {
 
 export const PostCard = ({ titulo,body }:propsType) => {
 
-  console.log(body);
-
   return (
     <MainContainer>
       <MainContent>

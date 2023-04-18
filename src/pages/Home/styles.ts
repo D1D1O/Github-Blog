@@ -16,5 +16,9 @@ export const PostsItems = styled.main`
   gap: 32px;
   margin-top: 48px;
   margin-bottom: 48px;
-
 `;
+
+export const LinkPost = styled.div`
+  text-decoration: none; 
+`;
+

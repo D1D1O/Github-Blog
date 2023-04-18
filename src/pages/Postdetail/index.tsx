@@ -1,23 +1,23 @@
+import { useContext } from "react";
 import { MainCard } from "../../components/MainCard"
 import { MainCardDetail } from "../../components/MainCardDetail"
 import { ContentPostDetail, PostDetail, PostDetailMain } from "./styled"
+import { UserContext } from "../../contexts/UserContext";
 
 export const Postdetail = () => {
 
+  const {post} = useContext(UserContext);
   return (
     <PostDetailMain>
-      <MainCardDetail/>
+      <MainCardDetail title={post.title} />
       <ContentPostDetail>
           <PostDetail>
             <p>
-            Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
-
+              {post.body}
             </p>
           </PostDetail>
       </ContentPostDetail>
       
-
-
     </PostDetailMain>
   )
 }

@@ -20,7 +20,9 @@ interface Item {
 interface UserContextData{
   issues: Issue;
   user: User;
+  post: fillPostProps;
   fetchIssues: (search: string) => Promise<void>;
+  fillPost: (value?:any) => Promise<void>;
 }
 
 interface User {
@@ -35,6 +37,10 @@ interface User {
   followers: number;
   html_url: string;
 }
+interface fillPostProps {
+  title?: string;
+  body?: string;
+}
 
 export const UserContext = React.createContext({} as UserContextData);
 
@@ -43,8 +49,11 @@ interface UserProviderProps {
 }
 
 export function UserProvider({ children }: UserProviderProps) {
+  const [login, setLogin] = useState<string>('d1d1o');
+  const [repo, setRepo] = useState<string>('Github-Blog');
   const [issues, setIssues] = useState<Issue>({} as Issue);
   const [user, setUser] = useState<User>({} as User);
+  const [post, setPost] = useState<fillPostProps>({} as fillPostProps);
 
   const fetchUser = useCallback( async (user: string) => {
     const response = await api.get(`users/${user}`);
@@ -53,22 +62,30 @@ export function UserProvider({ children }: UserProviderProps) {
   },[user]);
 
   const fetchIssues = useCallback(async (search?: string) => {{
-    const response = await api.get(`search/issues?q=${search}repo:d1d1o/Github-Blog`);
-    //const response = await api.get(`search/issues?q=repo:d1d1o/Github-Blog`);
-
+    const response = await api.get(`search/issues?q=${search}repo:${login}/${repo}`);
     const data = response.data;
-    console.log(data);
     setIssues(data);
   }},[issues]);
 
-  useEffect(()=>{
-    //fetchIssues('a');
-    fetchUser('d1d1o');
+  const fillPost = useCallback( async (value:fillPostProps) => {
+   await setPost(value);
   },[]);
 
 
+  useEffect(()=>{
+    fetchIssues('');
+    fetchUser(login);
+  },[]);
+
   return (
-    <UserContext.Provider value={{ issues,user,fetchIssues}}>
+    <UserContext.Provider 
+      value={{ 
+        issues,
+        user,
+        post,
+        fetchIssues,
+        fillPost
+      }}>
       {children}
     </UserContext.Provider>
   );

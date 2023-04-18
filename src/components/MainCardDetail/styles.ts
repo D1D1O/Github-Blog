@@ -66,6 +66,9 @@ export const FooterContent = styled.div`
   gap: 24px;
 
   span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
