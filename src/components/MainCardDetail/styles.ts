@@ -55,6 +55,12 @@ export const MainContent = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  p{
+    display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+   }
 
 
 `;

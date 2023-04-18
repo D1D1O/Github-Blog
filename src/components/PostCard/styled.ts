@@ -17,22 +17,28 @@ export const MainContent = styled.main`
 
 export const HeaderCard = styled.main`
   display  : grid ;
-  grid-template-columns: 6fr 1fr;
+  grid-template-columns: 2fr 3fr;
+  justify-content: center;
+  gap: 5px;
 
   h1 {
     //background-color: red;
-    width: 283px;
-    height: 64px;
+    width: 262px;
+    height: 30px;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 160%;
     color: ${props => props.theme["base-title"]};
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+
   }
   span {
-    //background-color: blue;
-    width: 54px;
+
     height: 22px;
     font-family: 'Nunito';
     font-style: normal;
@@ -60,10 +66,10 @@ export const ContentCard = styled.div`
   text-overflow:ellipsis; */
    p{
     display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 5;
-        overflow: hidden;
-   }
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
 
 
 `;

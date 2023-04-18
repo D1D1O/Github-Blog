@@ -16,6 +16,7 @@ interface Item {
   title: string;
   user: User;
   html_url: string;
+  created_at: string;
 }
 
 interface UserContextData{
@@ -64,7 +65,7 @@ export function UserProvider({ children }: UserProviderProps) {
   },[user]);
 
   const fetchIssues = useCallback(async (search?: string) => {{
-    const response = await api.get(`search/issues?q=${search}repo:${login}/${repo}`);
+    const response = await api.get(`search/issues?q=${search} repo:${login}/${repo}`);
     const data = response.data;
     setIssues(data);
   }},[issues]);

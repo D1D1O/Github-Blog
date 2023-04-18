@@ -28,7 +28,7 @@ export const Home =  () => {
                   <NavLink onClick={()=> handleSelectCard(item.title,item.body,item.html_url)} key={item.id} to={'detail'} >
                      <LinkPost  style={{ textDecoration: 'none' }}>
                     
-                        <PostCard titulo={item.title} body={item.body} />
+                        <PostCard titulo={item.title} body={item.body} created_at={item.created_at} />
                       
                      </LinkPost>
                   </NavLink>

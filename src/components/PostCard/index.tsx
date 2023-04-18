@@ -1,18 +1,27 @@
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import { ContentCard, HeaderCard, MainContainer, MainContent } from "./styled"
 
 interface propsType {
   titulo?: string;
   body?: string;
+  created_at: string;
 }
 
-export const PostCard = ({ titulo,body }:propsType) => {
+export const PostCard = ({ titulo,body,created_at }:propsType) => {
 
   return (
     <MainContainer>
       <MainContent>
         <HeaderCard>
           <h1> { titulo } </h1>
-          <span>Há 1 dia</span>
+          <span>
+          {formatDistanceToNow(new Date(created_at), {
+                    addSuffix: true,
+                    locale: ptBR,
+                  })}{' '}
+
+          </span>
         </HeaderCard>
 
         <ContentCard>
