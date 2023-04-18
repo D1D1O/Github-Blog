@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useCallback, useContext, useEffect } from "react"
 import { Header } from "../../components/Header"
 import { MainCard } from "../../components/MainCard"
 import { PostCard } from "../../components/PostCard"
@@ -9,16 +9,31 @@ import { HomeContainer, PostsContainer, PostsItems } from "./styles"
 
 export const Home =  () => {
 
-  //const { issues } = useContext(UserContext);
+  const { issues,fetchIssues } = useContext(UserContext);
 
+  useEffect( () => {
+    const initalload = async () => {
+      await fetchIssues('');
+    }
+     initalload()
+  },[]);
+
+
+  console.log('issues');
+  console.log(issues);
   return (
     <HomeContainer>
       <MainCard/>
       <SearchForm/>
       <PostsContainer>
         <PostsItems>
-        
-          <PostCard />
+          {
+              issues.items.map((item) => {
+                return (
+                  <PostCard titulo={item.title} body={item.body} />
+                )
+              })
+          }
 
         </PostsItems>
       </PostsContainer>

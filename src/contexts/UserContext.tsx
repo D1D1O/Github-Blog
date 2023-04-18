@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState,useCallback } from "react";
 import { api } from "../lib/axios";
 
 
@@ -10,6 +10,7 @@ interface Issue {
 }
 
 interface Item {
+  id: number;
   url: string;
   body: string;
   title: string;
@@ -19,6 +20,7 @@ interface Item {
 interface UserContextData{
   issues: Issue;
   user: User;
+  fetchIssues: (search: string) => Promise<void>;
 }
 
 interface User {
@@ -44,26 +46,29 @@ export function UserProvider({ children }: UserProviderProps) {
   const [issues, setIssues] = useState<Issue>({} as Issue);
   const [user, setUser] = useState<User>({} as User);
 
-  const fetchUser = async (user: string) => {
+  const fetchUser = useCallback( async (user: string) => {
     const response = await api.get(`users/${user}`);
     const data = response.data;
     setUser(data);
-  }
+  },[user]);
 
-  // const fetchIssues = async (search: string) => {
-  //   const response = await api.get(`search/issues?q=${search}repo:d1d1o/Github-Blog`);
-  //   const data = response.data;
-  //   setIssues(data);
-  // }
+  const fetchIssues = useCallback(async (search?: string) => {{
+    const response = await api.get(`search/issues?q=${search}repo:d1d1o/Github-Blog`);
+    //const response = await api.get(`search/issues?q=repo:d1d1o/Github-Blog`);
+
+    const data = response.data;
+    console.log(data);
+    setIssues(data);
+  }},[issues]);
 
   useEffect(()=>{
+    //fetchIssues('a');
     fetchUser('d1d1o');
-    // fetchIssues('a');
   },[]);
 
 
   return (
-    <UserContext.Provider value={{ issues,user}}>
+    <UserContext.Provider value={{ issues,user,fetchIssues}}>
       {children}
     </UserContext.Provider>
   );

@@ -13,13 +13,13 @@ export const PostCard = ({ titulo,body }:propsType) => {
     <MainContainer>
       <MainContent>
         <HeaderCard>
-          {/* <h1> { titulo } </h1> */}
+          <h1> { titulo } </h1>
           <span>Há 1 dia</span>
         </HeaderCard>
 
         <ContentCard>
           <p>
-            {/* {body} */}
+            {body}
           </p>
         </ContentCard>
       </MainContent>
